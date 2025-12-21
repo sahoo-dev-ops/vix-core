@@ -1,0 +1,50 @@
+version: v1
+description: VIX core signal definitions (Phase 1)
+
+signal_groups:
+
+  identity_base:
+    description: Vehicle identity and static attributes
+    signals:
+      - vin_validity
+      - manufacturer
+      - model
+      - variant
+      - manufacturing_year
+      - fuel_type
+      - transmission_type
+      - registration_state
+      - ownership_count
+
+  usage_condition:
+    description: Vehicle usage and condition indicators
+    signals:
+      - mileage
+      - age_years
+      - mileage_per_year
+      - mileage_deviation_score
+      - service_regularly_flag
+      - accident_history_flag
+
+  market_value:
+    description: Market and liquidity intelligence
+    signals:
+      - regional_market_price
+      - price_volatility_index
+      - demand_score
+      - liquidity_score
+      - time_to_sell_estimate
+
+  depreciation:
+    description: Value decay and future risk
+    signals:
+      - annual_depreciation_rate
+      - projected_value_12m
+      - projected_value_24m
+
+  risk_sanity:
+    description: Risk control and sanity checks
+    signals:
+      - data_completeness_score
+      - anomaly_flag
+      - confidence_score
