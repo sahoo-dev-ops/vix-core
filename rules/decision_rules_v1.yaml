@@ -1,0 +1,20 @@
+version: v1
+description: VIX decision rules (Phase 1)
+
+loan_eligibility:
+  min_confidence_score: 0.6
+  max_ownership_count: 3
+  max_vehicle_age_years: 12
+
+risk_thresholds:
+  high_risk:
+    confidence_score_below: 0.5
+  medium_risk:
+    confidence_score_between: [0.5, 0.7]
+  low_risk:
+    confidence_score_above: 0.7
+
+actions:
+  high_risk: reject
+  medium_risk: manual_review
+  low_risk: approve
