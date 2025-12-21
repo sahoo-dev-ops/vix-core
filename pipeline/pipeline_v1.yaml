@@ -1,0 +1,23 @@
+version: v1
+description: VIX decision pipeline (Phase 1)
+
+pipeline_steps:
+  - step: data_validation
+    description: Validate completeness and sanity of input signals
+    output: validation_score
+
+  - step: normalization
+    description: Normalize raw vehicle signals into comparable scales
+    output: normalized_signals
+
+  - step: risk_scoring
+    description: Compute overall vehicle risk score
+    output: risk_score
+
+  - step: confidence_calculation
+    description: Calculate confidence based on data quality and signal agreement
+    output: confidence_score
+
+  - step: decision_engine
+    description: Apply decision rules to produce final action
+    output: decision
