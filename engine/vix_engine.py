@@ -36,3 +36,17 @@ class VIXEngine:
             return actions["low_risk"]
 
         return "manual_review"
+
+
+if __name__ == "__main__":
+    engine = VIXEngine(
+        signals_path="../signals/signals_v1.yaml",
+        rules_path="../rules/decision_rules_v1.yaml"
+    )
+
+    sample_vehicle = {
+        "confidence_score": 0.72
+    }
+
+    decision = engine.evaluate(sample_vehicle)
+    print("VIX Decision:", decision)
