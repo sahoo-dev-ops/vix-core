@@ -2,10 +2,6 @@
 VIX Core Engine Tests
 Phase 1 – Rule & confidence validation
 """
-import sys
-import os
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from engine.vix_engine import VIXEngine
 
