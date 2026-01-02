@@ -1,17 +1,34 @@
+import argparse
 from engine.vix_engine import VIXEngine
 
+
 def main():
-    engine = VIXEngine(
-        signals_path="signals/signals_v1.yaml",
-        rules_path="rules/decision_rules_v1.yaml"
+    parser = argparse.ArgumentParser(
+        description="VIX – Vehicle Intelligence X CLI"
     )
 
-    sample_vehicle = {
-        "confidence_score": 0.72
+    parser.add_argument(
+        "--confidence-score",
+        type=float,
+        required=True,
+        help="Confidence score between 0 and 1"
+    )
+
+    args = parser.parse_args()
+
+    engine = VIXEngine(
+        signals_path="signals/signals_v1.yaml",
+        rules_path="rules/decision_rules_v1.yaml",
+    )
+
+    vehicle_input = {
+        "confidence_score": args.confidence_score
     }
 
-    decision = engine.evaluate(sample_vehicle)
+    decision = engine.evaluate(vehicle_input)
+
     print("VIX Decision:", decision)
+
 
 if __name__ == "__main__":
     main()
