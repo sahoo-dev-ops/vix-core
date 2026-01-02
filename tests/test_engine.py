@@ -4,7 +4,7 @@ VIX Core Engine Tests
 Phase 1 - Rule & confidence validation
 """
 
-from engine.vix_engine import VIXEngine
+from vix_core.engine.vix_engine import VIXEngine
 
 
 def test_low_risk_approval():
