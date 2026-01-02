@@ -3,10 +3,7 @@ from engine.vix_engine import VIXEngine
 
 
 def main():
-    parser = argparse.ArgumentParser(
-        description="VIX – Vehicle Intelligence X CLI"
-    )
-
+    parser = argparse.ArgumentParser(description="VIX Engine CLI")
     parser.add_argument(
         "--confidence-score",
         type=float,
@@ -21,13 +18,11 @@ def main():
         rules_path="rules/decision_rules_v1.yaml",
     )
 
-    vehicle_input = {
+    decision = engine.evaluate({
         "confidence_score": args.confidence_score
-    }
+    })
 
-    decision = engine.evaluate(vehicle_input)
-
-    print("VIX Decision:", decision)
+    print(f"VIX Decision: {decision}")
 
 
 if __name__ == "__main__":
