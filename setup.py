@@ -1,8 +1,8 @@
+
 from setuptools import setup, find_packages
 
 setup(
-    name="vix_core",
+    name="vix-core",
     version="0.1.0",
-    packages=find_packages(),
-    python_requires=">=3.9",
+    packages=find_packages(include=["engine", "engine.*"]),
 )
