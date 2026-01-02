@@ -3,8 +3,13 @@
 VIX Core Engine Tests
 Phase 1 - Rule & confidence validation
 """
+import sys
+from pathlib import Path
 
-from vix_core.engine.vix_engine import VIXEngine
+ROOT_DIR = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT_DIR))
+
+from engine.vix_engine import VIXEngine
 
 
 def test_low_risk_approval():
